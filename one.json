@@ -1,45 +1,74 @@
-"springTaskDefinition":{
-      "Type":"AWS::ECS::TaskDefinition",
-      "DependsOn":[
-        "MyVPC"
-      ],
-      "Properties":{
-        "ContainerDefinitions":[
-          {
-            "Name":"springboot",
-            "Cpu":"2",
-            "Essential":"true",
-            "Image":{
-              "Fn::Join":[
-                "",
-                [
-                  {
-                    "Ref":"AWS::AccountId"
-                  },
-                  ".dkr.ecr.us-east-1.amazonaws.com/",
-                  {
-                    "Ref":"ECSRepoName"
-                  },
-                  ":",
-                  {
-                    "Ref":"ImageTag"
-                  }
-                ]
-              ]
-            },
-            "Memory":"300",
-            "PortMappings":[
-              {
-                "HostPort":80,
-                "ContainerPort":8080
-              }
-            ]
-          }
-        ],
-        "Volumes":[
-          {
-            "Name":"my-vol"
-          }
-        ]
-      }
+{
+  "executionRoleArn": "arn:aws:iam::929519107320:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "logConfiguration": null,
+      "entryPoint": null,
+      "portMappings": [],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [],
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "image": "929519107320.dkr.ecr.us-east-1.amazonaws.com/t1",
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "c1"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "512",
+  "taskRoleArn": "arn:aws:iam::929519107320:role/ecsTaskExecutionRole",
+  "compatibilities": [
+    "EC2"
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:929519107320:task-definition/t1:1",
+  "family": "t1",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    }
+  ],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": null,
+  "cpu": "1024",
+  "revision": 1,
+  "status": "ACTIVE",
+  "volumes": []
+}
