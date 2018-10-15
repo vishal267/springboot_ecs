@@ -1,0 +1,14 @@
+{
+    "cluster": "t1-cluster",
+    "serviceName": "t1-service",
+    "taskDefinition": "t1",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:929519107320:targetgroup/t1/fdde155351dbbb6c",
+            "containerName": "web",
+            "containerPort": 8080
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}
