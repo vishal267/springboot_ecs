@@ -10,7 +10,7 @@
         }
     ],
     "desiredCount": 1,
-    "role": "ecsServiceRole",
+    "role": "AWSServiceRoleForECS",
     "role": "t1-service-role"
 
 }
