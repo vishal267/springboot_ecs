@@ -11,4 +11,6 @@
     ],
     "desiredCount": 1,
     "role": "ecsServiceRole"
+    "role": "t1-service-role"
+
 }
