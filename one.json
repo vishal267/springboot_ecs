@@ -50,11 +50,4 @@
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
     }
   ],
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
-  "networkMode": "awsvpc",
-  "cpu": "1024",
-  "revision": 1,
-  "status": "ACTIVE",
 }
